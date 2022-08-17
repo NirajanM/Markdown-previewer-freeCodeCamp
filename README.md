@@ -1,2 +1,1 @@
-# Markdown-previewer-freeCodeCamp
-# markdown-previewer-freeCodeCamp
+# Markdown-previewer-freeCodeCamp challenge 2
