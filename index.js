@@ -14,8 +14,19 @@ function App() {
             <h1>Markdown Previewer</h1>
             <textarea id="editor" value={text} onChange={handleChange} placeholder="write markdown text here..."></textarea>
             <h1>Output:</h1>
-            <div id="preview" dangerouslySet></div>
+            <Preview markdown={text} />
         </>
+    )
+}
+
+function Preview({ markdown }) {
+    return (
+        <div
+            id="preview"
+            dangerouslySetInnerHTML={{
+                __html: marked.parse(markdown, { renderer: renderer }),
+            }}
+        ></div>
     )
 }
 
