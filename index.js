@@ -1,47 +1,28 @@
-marked.setOptions({
-    break: true
-})
+
 const renderer = new marked.Renderer;
 const defaultMarkdown = `
-Heading
-=======
+# Marked Previewer, created by Nirajan Malla
+## This is how we write sub - heading...
+There's also [links](https://nirajanmalla.com.np), click to visit my portfolio   
+\`inline code\`
 
-Sub-heading
------------
- 
-### Another deeper heading
- 
-Paragraphs are separated
-by a blank line.
+            <html>
+                <head>
+                    <title>Code Block</title>
+                </head>
+            </html>
+1. This is first item of list.
+2. This is the second.
+3.This is third item.
 
-Leave 2 spaces at the end of a line to do a  
-line break
+> this is a Blockquote
+![The lorem picsum](https://picsum.photos/200/200)
 
-Text attributes *italic*, **bold**, 
-\`monospace\`, ~~strikethrough~~.
-
-Shopping list:
-
-  * apples
-  * oranges
-  * pears
-
-Numbered list:
-
-  1. apples
-  2. oranges
-  3. pears
-
-The rain---not the reign---in
-Spain.
-
-\`\`\`
-Hey, look, a code block!
-\`\`\`
-
- *[Helder S Ribeiro](https://freecodecamp.com/hsribei)*
+**A bold text**
 `;
-
+marked.setOptions({
+    breaks: true
+});
 function App() {
     const [text, setText] = React.useState(defaultMarkdown);
     function handleChange(e) {
