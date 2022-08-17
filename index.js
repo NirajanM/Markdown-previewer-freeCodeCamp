@@ -1,10 +1,10 @@
 
 const renderer = new marked.Renderer;
 const defaultMarkdown = `
-# Marked Previewer, created by Nirajan Malla
+# This is how we write heading element
 ## This is how we write sub - heading...
 There's also [links](https://nirajanmalla.com.np), click to visit my portfolio   
-\`inline code\`
+\`writing inline code\`
 
             <html>
                 <head>
@@ -50,13 +50,16 @@ function App() {
 
 function Preview({ markdown }) {
     return (
-        <div
-            id="preview"
-            dangerouslySetInnerHTML={{
-                __html: marked.parse(markdown, { renderer: renderer }),
-            }}
-        >
-        </div>
+        <>
+            <div
+                id="preview"
+                dangerouslySetInnerHTML={{
+                    __html: marked.parse(markdown, { renderer: renderer }),
+                }}
+            >
+            </div>
+            <footer>created with ♥ by Nirajan</footer>
+        </>
     )
 }
 
